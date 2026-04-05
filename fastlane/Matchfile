@@ -8,3 +8,14 @@ storage_mode("git")
 type("appstore")
 
 # The docs are available on https://docs.fastlane.tools/actions/match
+
+capabilities = {
+  app_groups: "true"  # This enables the application-groups entitlement
+}
+
+match(
+  type: "appstore",
+  app_identifier: "org.nightscout.***.trio",
+  capabilities: capabilities,
+  force_for_new_devices: true
+)
